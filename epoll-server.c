@@ -79,7 +79,7 @@ wait:
 				len = sizeof(client_addr);
 				cfd = accept(lfd, (struct sockaddr *)&client_addr, &len);
 				if (cfd < 0) {
-					printf("accept error: %s\n", strerror);
+					printf("accept error: %s\n", strerror(errno));
 					continue;
 				}
 				printf("Connect from %s\n", inet_ntoa(client_addr.sin_addr));
